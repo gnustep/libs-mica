@@ -27,6 +27,7 @@ Mica_HEADER_FILES_DIR = Headers
 Mica_HEADER_FILES = \
 CoreGraphics/CGBitmapContext.h \
 CoreGraphics/CGContext.h \
+CoreGraphics/CGGeometry.h \
 CoreGraphics/CGColorSpace.h \
 CoreGraphics/CGImage.h \
 CoreGraphics/CoreGraphics.h \

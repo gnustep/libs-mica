@@ -1,6 +1,6 @@
 /** 
    Mica: Implementation of CoreGraphics on top of AppKit
-   CGColorSpace.h
+   CGGeometry.h
 
    Copyright (C) 2015 Free Software Foundation, Inc.
 
@@ -24,30 +24,11 @@
    Boston, MA 02111 USA.
    */
 
-#ifndef COLORSPACE_H_
-#define COLORSPACE_H_
+#import <Foundation/NSGeometry.h>
 
-// FXIME perhaps temporary
-typedef const struct __CFString *CFStringRef;
 
-typedef struct CGColorSpace *CGColorSpaceRef;
+typedef struct _NSPoint CGPoint;
 
-CFStringRef kCGColorSpaceGenericGray;
-CFStringRef kCGColorSpaceGenericRGB;
-CFStringRef kCGColorSpaceGenericCMYK;
+typedef struct _NSSize CGSize;
 
-enum CGColorSpaceModel {
-  kCGColorSpaceModelUnknown = -1,
-  kCGColorSpaceModelMonochrome,
-  kCGColorSpaceModelRGB,
-  kCGColorSpaceModelCMYK,
-  kCGColorSpaceModelLab,
-  kCGColorSpaceModelDeviceN,
-  kCGColorSpaceModelIndexed,
-  kCGColorSpaceModelPattern
-};
-typedef int32_t CGColorSpaceModel;
-
-CGColorSpaceRef CGColorSpaceCreateWithName ( CFStringRef name );
-
-#endif /* COLORSPACE_H_ */
+typedef struct _NSRect CGRect;

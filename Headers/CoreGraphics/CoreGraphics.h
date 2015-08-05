@@ -31,5 +31,6 @@
 #include <CoreGraphics/CGColorSpace.h>
 #include <CoreGraphics/CGBitmapContext.h>
 #include <CoreGraphics/CGImage.h>
+#include <CoreGraphics/CGGeometry.h>
 
 #endif /* COREGRAPHICS_H_ */

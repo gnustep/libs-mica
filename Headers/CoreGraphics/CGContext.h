@@ -32,4 +32,6 @@ typedef struct CGContext *CGContextRef;
 #include <CoreGraphics/CGColorSpace.h>
 #include <CoreGraphics/CGImage.h>
 
+void CGContextRelease( CGContextRef c);
+
 #endif /* CGCONTEXT_H_ */
