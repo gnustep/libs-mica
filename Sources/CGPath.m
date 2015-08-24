@@ -1,6 +1,6 @@
 /** 
    Mica: Implementation of CoreGraphics on top of AppKit
-   CGColorSpace.h
+   CGPath.m
 
    Copyright (C) 2015 Free Software Foundation, Inc.
 
@@ -24,32 +24,30 @@
    Boston, MA 02111 USA.
    */
 
-#ifndef COLORSPACE_H_
-#define COLORSPACE_H_
+#import <CoreGraphics/CGPath.h>
 
-#include <stdint.h> /* for int32_t and similar types */
+#import <AppKit/NSBezierPath.h>
 
-// FXIME perhaps temporary
-typedef const struct __CFString *CFStringRef;
+void CGPathRelease
+(
+ CGPathRef path
+ )
+{
+  NSBezierPath *nsPath;
 
-typedef struct CGColorSpace *CGColorSpaceRef;
+  nsPath = path;
+  if (nsPath)
+    [nsPath release];
+}
 
-CFStringRef kCGColorSpaceGenericGray;
-CFStringRef kCGColorSpaceGenericRGB;
-CFStringRef kCGColorSpaceGenericCMYK;
+void CGPathRetain
+(
+ CGPathRef path
+ )
+{
+  NSBezierPath *nsPath;
 
-enum CGColorSpaceModel {
-  kCGColorSpaceModelUnknown = -1,
-  kCGColorSpaceModelMonochrome,
-  kCGColorSpaceModelRGB,
-  kCGColorSpaceModelCMYK,
-  kCGColorSpaceModelLab,
-  kCGColorSpaceModelDeviceN,
-  kCGColorSpaceModelIndexed,
-  kCGColorSpaceModelPattern
-};
-typedef int32_t CGColorSpaceModel;
-
-CGColorSpaceRef CGColorSpaceCreateWithName ( CFStringRef name );
-
-#endif /* COLORSPACE_H_ */
+  nsPath = path;
+  if (nsPath)
+    [nsPath retain];
+}

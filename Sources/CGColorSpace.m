@@ -26,6 +26,8 @@
 
 #include <CoreGraphics/CGColorSpace.h>
 
+#import <Foundation/Foundation.h>
+
 CGColorSpaceRef CGColorSpaceCreateWithName ( CFStringRef name )
 {
   // FIXME this is a stub

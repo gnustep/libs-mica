@@ -38,7 +38,8 @@ CoreGraphics/CoreGraphics.h \
 # Class files
 #
 Mica_OBJC_FILES = \
-
+Sources/CGColorSpace.m \
+Sources/CGPath.m \
 
 #
 # Makefiles
