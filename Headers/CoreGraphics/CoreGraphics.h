@@ -32,5 +32,6 @@
 #include <CoreGraphics/CGBitmapContext.h>
 #include <CoreGraphics/CGImage.h>
 #include <CoreGraphics/CGGeometry.h>
+#include <CoreGraphics/CGPath.h>
 
 #endif /* COREGRAPHICS_H_ */

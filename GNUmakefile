@@ -30,6 +30,7 @@ CoreGraphics/CGContext.h \
 CoreGraphics/CGGeometry.h \
 CoreGraphics/CGColorSpace.h \
 CoreGraphics/CGImage.h \
+CoreGraphics/CGPath.h \
 CoreGraphics/CoreGraphics.h \
 
 

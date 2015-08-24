@@ -34,3 +34,4 @@ typedef struct _NSSize CGSize;
 typedef struct _NSRect CGRect;
 
 #define CGPointMake(x, y) NSMakePoint(x,y)
+#define CGRectInset(r, dx, dy) NSInsetRect(r, dx, dy)
