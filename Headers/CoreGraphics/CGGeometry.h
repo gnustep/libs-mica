@@ -32,3 +32,5 @@ typedef struct _NSPoint CGPoint;
 typedef struct _NSSize CGSize;
 
 typedef struct _NSRect CGRect;
+
+#define CGPointMake(x, y) NSMakePoint(x,y)
