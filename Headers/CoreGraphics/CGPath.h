@@ -30,7 +30,41 @@
 typedef struct CGPath  *CGPathRef;
 typedef struct CGMutablePath  *CGMutablePathRef;
 
+enum CGPathDrawingMode
+{
+  kCGPathFill,
+  kCGPathEOFill,
+  kCGPathStroke,
+  kCGPathFillStroke,
+  kCGPathEOFillStroke
+};
+typedef enum CGPathDrawingMode CGPathDrawingMode;
 
+enum CGPathElementType
+{
+  kCGPathElementMoveToPoint,
+  kCGPathElementAddLineToPoint,
+  kCGPathElementAddQuadCurveToPoint,
+  kCGPathElementAddCurveToPoint,
+  kCGPathElementCloseSubpath
+};
+typedef enum CGPathElementType CGPathElementType;
+
+enum CGLineCap
+{
+  kCGLineCapButt,
+  kCGLineCapRound,
+  kCGLineCapSquare
+};
+typedef enum CGLineCap CGLineCap; 
+
+enum CGLineJoin
+{
+  kCGLineJoinMiter,
+  kCGLineJoinRound,
+  kCGLineJoinBevel
+};
+typedef enum CGLineJoin CGLineJoin;
 
 void CGPathRelease
 (
