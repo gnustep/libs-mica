@@ -83,7 +83,7 @@ void CGPathRelease
  CGPathRef path
  );
 
-void CGPathRetain
+CGPathRef CGPathRetain
 (
  CGPathRef path
  );

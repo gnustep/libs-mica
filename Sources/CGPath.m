@@ -28,6 +28,9 @@
 
 #import <AppKit/NSBezierPath.h>
 
+@interface CGPath : NSBezierPath;
+@end
+
 void CGPathRelease
 (
  CGPathRef path
@@ -40,7 +43,7 @@ void CGPathRelease
     [nsPath release];
 }
 
-void CGPathRetain
+CGPathRef CGPathRetain
 (
  CGPathRef path
  )
@@ -50,4 +53,6 @@ void CGPathRetain
   nsPath = path;
   if (nsPath)
     [nsPath retain];
+
+  return (CGPathRef)nsPath;
 }
