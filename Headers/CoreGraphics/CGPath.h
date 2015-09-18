@@ -27,8 +27,20 @@
 #ifndef CGPATH_H_
 #define CGPATH_H_
 
+#ifdef __OBJC__
+
+@class CGPath;
+typedef CGPath  *CGPathRef;
+
+@class CGMutablePath;
+typedef CGMutablePath  *CGMutablePathRef;
+
+#else /* standard C */
+
 typedef struct CGPath  *CGPathRef;
 typedef struct CGMutablePath  *CGMutablePathRef;
+
+#endif /* OBJC */
 
 enum CGPathDrawingMode
 {
