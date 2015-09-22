@@ -28,7 +28,7 @@
 
 #import <AppKit/NSBezierPath.h>
 
-@interface CGPath : NSBezierPath;
+@interface CGPath : NSBezierPath
 @end
 
 void CGPathRelease

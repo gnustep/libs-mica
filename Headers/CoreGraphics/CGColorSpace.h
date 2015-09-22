@@ -29,10 +29,15 @@
 
 #include <stdint.h> /* for int32_t and similar types */
 
-// FXIME perhaps temporary
+// FXIME perhaps temporary, should check for CoreFoundation.. here we copy corebase, but why not extend NSString?
 typedef const struct __CFString *CFStringRef;
 
+#ifdef __OBJC__
+@class CGColorSpace;
+typedef CGColorSpace *CGColorSpaceRef;
+#else
 typedef struct CGColorSpace *CGColorSpaceRef;
+#endif
 
 CFStringRef kCGColorSpaceGenericGray;
 CFStringRef kCGColorSpaceGenericRGB;

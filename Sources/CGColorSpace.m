@@ -27,6 +27,10 @@
 #include <CoreGraphics/CGColorSpace.h>
 
 #import <Foundation/Foundation.h>
+#import <AppKit/NSColorSpace.h>
+
+@interface CGColorSpace : NSColorSpace
+@end
 
 CGColorSpaceRef CGColorSpaceCreateWithName ( CFStringRef name )
 {
