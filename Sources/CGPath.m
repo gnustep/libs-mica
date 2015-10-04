@@ -26,17 +26,19 @@
 
 #import <CoreGraphics/CGPath.h>
 
+#import <AppKit/NSAffineTransform.h>
 #import <AppKit/NSBezierPath.h>
 
 @interface CGPath : NSBezierPath
 @end
+
 
 void CGPathRelease
 (
  CGPathRef path
  )
 {
-  NSBezierPath *nsPath;
+  const NSBezierPath *nsPath;
 
   nsPath = path;
   if (nsPath)
@@ -48,11 +50,52 @@ CGPathRef CGPathRetain
  CGPathRef path
  )
 {
-  NSBezierPath *nsPath;
+  const NSBezierPath *nsPath;
 
   nsPath = path;
   if (nsPath)
     [nsPath retain];
 
   return (CGPathRef)nsPath;
+}
+
+
+/* modifying */
+
+void CGPathAddPath
+(
+ CGMutablePathRef path1,
+ const CGAffineTransform *m,
+ CGPathRef path2
+ )
+{
+  NSBezierPath *nsPath1;
+  NSBezierPath *nsPath2;
+  NSAffineTransform *nsAt;
+ 
+  nsPath1 = path1;
+  nsPath2 = (NSBezierPath *)path2;  // discard const qualifier
+  nsAt = [NSAffineTransform transform];
+  [nsAt setTransformStruct: *(NSAffineTransformStruct *)m];
+
+  [nsPath2 transformUsingAffineTransform: nsAt];
+  [nsPath1 appendBezierPath:nsPath2];
+}
+
+void CGPathMoveToPoint
+(
+ CGMutablePathRef path,
+ const CGAffineTransform *m,
+ CGFloat x, CGFloat y
+ )
+{
+  const NSBezierPath *nsPath;
+  NSAffineTransform *nsAt;
+  
+  nsPath = path;
+  nsAt = [NSAffineTransform transform];
+  [nsAt setTransformStruct: *(NSAffineTransformStruct *)m];
+
+  [nsPath transformUsingAffineTransform: nsAt];
+  [nsPath moveToPoint: NSMakePoint(x, y)];
 }

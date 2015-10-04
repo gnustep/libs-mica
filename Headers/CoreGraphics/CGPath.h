@@ -30,17 +30,17 @@
 #ifdef __OBJC__
 
 @class CGPath;
-typedef CGPath  *CGPathRef;
-
-@class CGMutablePath;
-typedef CGMutablePath  *CGMutablePathRef;
+typedef const CGPath  *CGPathRef;
+typedef CGPath  *CGMutablePathRef;
 
 #else /* standard C */
 
-typedef struct CGPath  *CGPathRef;
-typedef struct CGMutablePath  *CGMutablePathRef;
+typedef const struct CGPath  *CGPathRef;
+typedef struct CGPath  *CGMutablePathRef;
 
 #endif /* OBJC */
+
+#include <CoreGraphics/CGAffineTransform.h>
 
 enum CGPathDrawingMode
 {
@@ -78,6 +78,8 @@ enum CGLineJoin
 };
 typedef enum CGLineJoin CGLineJoin;
 
+/* creation and management */
+
 void CGPathRelease
 (
  CGPathRef path
@@ -86,6 +88,23 @@ void CGPathRelease
 CGPathRef CGPathRetain
 (
  CGPathRef path
+ );
+
+
+/* modifying */
+
+void CGPathAddPath
+(
+ CGMutablePathRef path1,
+ const CGAffineTransform *m,
+ CGPathRef path2
+ );
+
+void CGPathMoveToPoint
+(
+ CGMutablePathRef path1,
+ const CGAffineTransform *m,
+ CGFloat x, CGFloat y
  );
 
 #endif /* CGPATH_H_ */

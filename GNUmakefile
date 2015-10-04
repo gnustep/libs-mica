@@ -25,6 +25,7 @@ Mica_HEADER_FILES_DIR = Headers
 # Public headers (will be installed)
 #
 Mica_HEADER_FILES = \
+CoreGraphics/CGAffineTransform.h \
 CoreGraphics/CGBitmapContext.h \
 CoreGraphics/CGContext.h \
 CoreGraphics/CGGeometry.h \

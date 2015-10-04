@@ -1,6 +1,6 @@
 /** 
    Mica: Implementation of CoreGraphics on top of AppKit
-   CoreGraphics.h
+   CGAffineTransform.h
 
    Copyright (C) 2015 Free Software Foundation, Inc.
 
@@ -24,15 +24,22 @@
    Boston, MA 02111 USA.
    */
 
-#ifndef COREGRAPHICS_H_
-#define COREGRAPHICS_H_
+#ifndef CGAFFINETRANSFORM_H_
+#define CGAFFINETRANSFORM_H_
 
-#include <CoreGraphics/CGAffineTransform.h>
-#include <CoreGraphics/CGContext.h>
-#include <CoreGraphics/CGColorSpace.h>
-#include <CoreGraphics/CGBitmapContext.h>
-#include <CoreGraphics/CGImage.h>
 #include <CoreGraphics/CGGeometry.h>
-#include <CoreGraphics/CGPath.h>
 
-#endif /* COREGRAPHICS_H_ */
+typedef struct CGAffineTransform CGAffineTransform;
+
+struct CGAffineTransform
+{
+  CGFloat a;
+  CGFloat b;
+  CGFloat c;
+  CGFloat d;
+  CGFloat tx;
+  CGFloat ty;
+};
+
+
+#endif /* CGAFFINETRANSFORM_H_ */
