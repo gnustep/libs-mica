@@ -27,11 +27,34 @@
 #ifndef CGCONTEXT_H_
 #define CGCONTEXT_H_
 
-typedef struct CGContext *CGContextRef;
-
 #include <CoreGraphics/CGColorSpace.h>
 #include <CoreGraphics/CGImage.h>
+#include <CoreGraphics/CGPath.h>
+
+#ifdef __OBJC__
+
+@class CGContext;
+typedef CGContext *CGContextRef;
+
+#else /* standard C */
+
+typedef struct CGContext *CGContextRef;
+
+#endif
+
+
+/* managing */
 
 void CGContextRelease( CGContextRef c);
+CGContextRef CGContextRetain( CGContextRef c);
+
+/* constructing paths */
+
+void CGContextAddPath ( CGContextRef c, CGPathRef path );
+
+/* painting paths */
+
+void CGContextDrawPath ( CGContextRef c, CGPathDrawingMode mode );
+void CGContextFillPath ( CGContextRef c );
 
 #endif /* CGCONTEXT_H_ */

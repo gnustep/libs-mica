@@ -38,6 +38,7 @@ CoreGraphics/CoreGraphics.h \
 # Class files
 #
 Mica_OBJC_FILES = \
+Sources/CGContext.m \
 Sources/CGColorSpace.m \
 Sources/CGPath.m \
 
