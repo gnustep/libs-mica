@@ -33,6 +33,14 @@
 @end
 
 
+CGMutablePathRef CGPathCreateMutable ( void )
+{
+  NSBezierPath *p;
+
+  p = [[NSBezierPath alloc] init];
+  return (CGMutablePathRef)p;
+}
+
 void CGPathRelease
 (
  CGPathRef path

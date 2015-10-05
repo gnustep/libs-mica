@@ -78,7 +78,10 @@ enum CGLineJoin
 };
 typedef enum CGLineJoin CGLineJoin;
 
+
 /* creation and management */
+
+CGMutablePathRef CGPathCreateMutable ( void ); 
 
 void CGPathRelease
 (
