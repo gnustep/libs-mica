@@ -74,11 +74,11 @@ void CGPathAddPath
   NSAffineTransform *nsAt;
  
   nsPath1 = path1;
-  nsPath2 = (NSBezierPath *)path2;  // discard const qualifier
+  nsPath2 = [(NSBezierPath *)path2 copy];  // make a copy before applying transform
   nsAt = [NSAffineTransform transform];
   [nsAt setTransformStruct: *(NSAffineTransformStruct *)m];
-
   [nsPath2 transformUsingAffineTransform: nsAt];
+  
   [nsPath1 appendBezierPath:nsPath2];
 }
 
@@ -96,6 +96,5 @@ void CGPathMoveToPoint
   nsAt = [NSAffineTransform transform];
   [nsAt setTransformStruct: *(NSAffineTransformStruct *)m];
 
-  [nsPath transformUsingAffineTransform: nsAt];
-  [nsPath moveToPoint: NSMakePoint(x, y)];
+  [nsPath moveToPoint: [nsAt transformPoint:NSMakePoint(x, y)]];
 }
