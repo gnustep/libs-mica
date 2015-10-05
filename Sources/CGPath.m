@@ -98,3 +98,14 @@ void CGPathMoveToPoint
 
   [nsPath moveToPoint: [nsAt transformPoint:NSMakePoint(x, y)]];
 }
+
+void CGPathCloseSubpath
+(
+ CGMutablePathRef path
+ )
+{
+  NSBezierPath *nsPath;
+
+  nsPath = path;
+  [nsPath closePath];
+}
