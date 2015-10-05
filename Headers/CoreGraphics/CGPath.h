@@ -93,6 +93,21 @@ CGPathRef CGPathRetain
 
 /* modifying */
 
+void CGPathAddArcToPoint
+(
+ CGMutablePathRef path,
+ const CGAffineTransform *m,
+ CGFloat x1, CGFloat y1,
+ CGFloat x2, CGFloat y2,
+ CGFloat radius
+ ); 
+
+void CGPathAddLineToPoint
+( CGMutablePathRef path,
+  const CGAffineTransform *m,
+  CGFloat x, CGFloat y
+  ); 
+
 void CGPathAddPath
 (
  CGMutablePathRef path1,
@@ -106,5 +121,10 @@ void CGPathMoveToPoint
  const CGAffineTransform *m,
  CGFloat x, CGFloat y
  );
+
+void CGPathCloseSubpath
+(
+ CGMutablePathRef path
+ ); 
 
 #endif /* CGPATH_H_ */

@@ -90,6 +90,25 @@ void CGPathAddArcToPoint
 }
 
 
+void CGPathAddLineToPoint
+( CGMutablePathRef path,
+  const CGAffineTransform *m,
+  CGFloat x, CGFloat y
+  )
+{
+  NSBezierPath *nsPath;
+  NSAffineTransform *nsAt;
+  NSPoint p;
+
+  nsPath = path;
+  p = NSMakePoint (x, y);
+
+  nsAt = [NSAffineTransform transform];
+  [nsAt setTransformStruct: *(NSAffineTransformStruct *)m];
+
+  p = [nsAt transformPoint:p];
+  [nsPath lineToPoint: p];
+}
 
 void CGPathAddPath
 (
