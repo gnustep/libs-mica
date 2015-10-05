@@ -62,6 +62,35 @@ CGPathRef CGPathRetain
 
 /* modifying */
 
+void CGPathAddArcToPoint
+(
+ CGMutablePathRef path,
+ const CGAffineTransform *m,
+ CGFloat x1, CGFloat y1,
+ CGFloat x2, CGFloat y2,
+ CGFloat radius
+ )
+{
+  NSBezierPath *nsPath;
+  NSAffineTransform *nsAt;
+  NSPoint p1;
+  NSPoint p2;
+
+  nsPath = path;
+  p1 = NSMakePoint (x1, y1);
+  p2 = NSMakePoint (x2, y2);
+  nsAt = [NSAffineTransform transform];
+  [nsAt setTransformStruct: *(NSAffineTransformStruct *)m];
+
+  p1 = [nsAt transformPoint:p1];
+  p2 = [nsAt transformPoint:p2];
+  [nsPath appendBezierPathWithArcFromPoint:p1
+                                   toPoint:p2
+                                    radius:radius];
+}
+
+
+
 void CGPathAddPath
 (
  CGMutablePathRef path1,
