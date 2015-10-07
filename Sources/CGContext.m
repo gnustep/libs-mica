@@ -44,6 +44,7 @@
 - (void)dealloc
 {
   [_path release];
+  [super dealloc];
 }
 
 - (void)setPath:(NSBezierPath *)p
@@ -91,6 +92,21 @@ CGContextRef CGContextRetain
   return (CGContextRef)nsGc;
 }
 
+/* parameters */
+
+void CGContextSetLineWidth
+(
+ CGContextRef c,
+ CGFloat width
+ )
+{
+  NSBezierPath *p;
+
+  p = [c path];
+  [p setLineWidth:width];
+}
+
+/* constructing */
 
 void CGContextAddPath
 (
@@ -102,6 +118,7 @@ void CGContextAddPath
   nsGc = c;
 }
 
+/* painting */
 
 void CGContextDrawPath
 (

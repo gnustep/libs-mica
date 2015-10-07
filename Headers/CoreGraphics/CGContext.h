@@ -48,6 +48,13 @@ typedef struct CGContext *CGContextRef;
 void CGContextRelease( CGContextRef c);
 CGContextRef CGContextRetain( CGContextRef c);
 
+/* saving and restoring */
+
+
+/* graphic state parameters */
+
+void CGContextSetLineWidth ( CGContextRef c, CGFloat width );
+
 /* constructing paths */
 
 void CGContextAddPath ( CGContextRef c, CGPathRef path );
