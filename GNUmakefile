@@ -30,6 +30,7 @@ CoreGraphics/CGBitmapContext.h \
 CoreGraphics/CGContext.h \
 CoreGraphics/CGGeometry.h \
 CoreGraphics/CGColorSpace.h \
+CoreGraphics/CGBitmapContext.h \
 CoreGraphics/CGImage.h \
 CoreGraphics/CGPath.h \
 CoreGraphics/CoreGraphics.h \
@@ -41,6 +42,7 @@ CoreGraphics/CoreGraphics.h \
 Mica_OBJC_FILES = \
 Sources/CGContext.m \
 Sources/CGColorSpace.m \
+Sources/CGBitmapContext.m \
 Sources/CGPath.m \
 
 #
