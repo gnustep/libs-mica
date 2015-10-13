@@ -133,23 +133,23 @@ void CGContextDrawPath
   
   switch (mode)
     {
-    kCGPathFill:
+    case kCGPathFill:
       [p setWindingRule:NSNonZeroWindingRule];
       [p fill];
       break;
-    kCGPathEOFFill:
+    case kCGPathEOFill:
       [p setWindingRule:NSEvenOddWindingRule];
       [p fill];
       break;
-    kCGPathStroke:
+    case kCGPathStroke:
       [p stroke];
       break;
-    kCGPathFillStroke:
+    case kCGPathFillStroke:
       [p setWindingRule:NSNonZeroWindingRule];
       [p fill];
       [p stroke];
       break;
-    kCGPathEOFFillStroke:
+    case kCGPathEOFillStroke:
       [p setWindingRule:NSEvenOddWindingRule];
       [p fill];
       [p stroke];
