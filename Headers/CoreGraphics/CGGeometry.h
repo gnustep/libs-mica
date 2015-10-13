@@ -26,6 +26,9 @@
 
 #import <Foundation/NSGeometry.h>
 
+#ifndef CGGEOMETRY_H_
+#define CGGEOMETRY_H_
+
 
 typedef struct _NSPoint CGPoint;
 
@@ -35,3 +38,5 @@ typedef struct _NSRect CGRect;
 
 #define CGPointMake(x, y) NSMakePoint(x,y)
 #define CGRectInset(r, dx, dy) NSInsetRect(r, dx, dy)
+
+#endif /* CGGEOMETRY_H_ */
