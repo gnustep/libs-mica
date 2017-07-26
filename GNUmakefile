@@ -49,6 +49,7 @@ CoreGraphics/CGGeometry.h \
 CoreGraphics/CGColorSpace.h \
 CoreGraphics/CGBitmapContext.h \
 CoreGraphics/CGImage.h \
+CoreGraphics/CGFont.h \
 CoreGraphics/CGPath.h \
 CoreGraphics/CoreGraphics.h \
 
@@ -61,6 +62,7 @@ Sources/CGContext.m \
 Sources/CGColorSpace.m \
 Sources/CGBitmapContext.m \
 Sources/CGPath.m \
+Sources/CGFont.m \
 
 #
 # Makefiles
